@@ -392,6 +392,9 @@ class GridSearchCV(BaseSearchCV):
         self.cv_results_ = results
         self.best_index_ = best_index
         self.n_splits_ = n_splits
+        
+         # return the best score 
+        self.best_score_ = max(results.get("mean_test_score"))
 
         if self.refit:
             # fit the best estimator using the entire dataset
